@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Main application component that provides cart context and renders the header, hero, trending books section, footer, and cart panel with state management for cart visibility.",
+  "frontend/src/components/Header.tsx": "Sticky header component displaying the Chapter One logo, navigation links (Home, Categories, Bestsellers), and a cart button with dynamic item count.",
+  "frontend/src/components/Hero.tsx": "Hero section component with background image, headline \"Find Your Next Great Escape\", description, and CTA button that scrolls to trending books.",
+  "frontend/src/components/TrendingBooks.tsx": "Section component that renders a responsive grid of trending book cards with heading.",
+  "frontend/src/components/BookCard.tsx": "Individual book card component displaying cover image, title, author, and Add to Cart button with hover effects.",
+  "frontend/src/components/CartPanel.tsx": "Sliding sheet panel component for cart management with item list, quantity controls, remove buttons, and checkout CTA.",
+  "frontend/src/components/Footer.tsx": "Footer component displaying copyright text and Caffeine.ai attribution with UTM tracking parameters.",
+  "frontend/src/features/books/trendingBooks.ts": "Static data file defining the four trending books with their IDs, titles, authors, and cover image paths.",
+  "frontend/src/features/cart/cartStore.tsx": "React context provider and hook for cart state management with sessionStorage persistence, supporting add, remove, increment, and decrement operations.",
+  "frontend/src/index.css": "Global styles with OKLCH color system defining a warm bookstore palette (parchment, ink, burgundy) for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with serif font family and extended color tokens matching the warm bookstore aesthetic."
+}

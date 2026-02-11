@@ -1,0 +1,135 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-react-typescript-homepage-that-matches-the-provided-html-structure-header-with-logo-text-chapter-one-navigation-links-home-categories-bestsellers-and-a-cart-button-showing-item-count",
+      "featureTitle": "Implement a React + TypeScript homepage that matches the provided HTML structure: header with logo text “Chapter One 📚”, navigation links (Home, Categories, Bestsellers), and a cart button showing item count.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-the-hero-section-with-the-provided-headline-description-and-cta-button-text-styled-for-a-modern-storefront-landing-page",
+      "featureTitle": "Create the hero section with the provided headline, description, and CTA button text, styled for a modern storefront landing page.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-a-trending-books-section-as-a-responsive-grid-of-book-cards-for-the-four-provided-titles-authors-each-with-a-cover-image-area-and-an-add-to-cart-button",
+      "featureTitle": "Render a “Trending Books” section as a responsive grid of book cards for the four provided titles/authors, each with a cover image area and an “Add to Cart” button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/books/trendingBooks.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-client-side-cart-behavior-clicking-add-to-cart-increases-the-cart-count-in-the-header-optionally-allow-removing-items-from-a-simple-cart-drawer-modal-or-dedicated-cart-section-accessible-from-the-cart-button",
+      "featureTitle": "Implement client-side cart behavior: clicking “Add to Cart” increases the cart count in the header; optionally allow removing items from a simple cart drawer/modal or dedicated cart section accessible from the cart button.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-footer-with-the-provided-copyright-text",
+      "featureTitle": "Add the footer with the provided copyright text.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-visual-theme-colors-typography-spacing-component-styling-inspired-by-a-warm-paper-and-ink-bookstore-aesthetic-using-tailwind-css-consistently-across-the-page-avoid-a-blue-purple-primary-palette",
+      "featureTitle": "Apply a coherent visual theme (colors, typography, spacing, component styling) inspired by a warm, paper-and-ink bookstore aesthetic, using Tailwind CSS consistently across the page (avoid a blue/purple primary palette).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-in-the-homepage-hero-background-and-book-cover-placeholders",
+      "featureTitle": "Add the required generated images as static assets under frontend/public/assets/generated and use them in the homepage (hero background and book cover placeholders).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/books/trendingBooks.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "kind": "build_request",
+  "title": "Create 'Chapter One' online bookstore homepage UI with trending books and cart",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a React + TypeScript homepage that matches the provided HTML structure: header with logo text “Chapter One 📚”, navigation links (Home, Categories, Bestsellers), and a cart button showing item count.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<div class=\"logo\">Chapter One 📚</div>\n        <nav>\n            <ul>\n                <li><a href=\"#\">Home</a></li>\n                <li><a href=\"#\">Categories</a></li>\n                <li><a href=\"#\">Bestsellers</a></li>\n                <li><a href=\"#\" class=\"cart-btn\">Cart (9)</a></li>\n            </ul>\n        </nav>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header contains the logo text and the four nav items.",
+        "Cart label displays a dynamic count (not hard-coded) based on current cart state.",
+        "All user-facing text is in English."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create the hero section with the provided headline, description, and CTA button text, styled for a modern storefront landing page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<section class=\"hero\">\n        <div class=\"hero-content\">\n            <h1>Find Your Next Great Escape</h1>\n            <p>From timeless classics to modern thrillers, we have it all.</p>\n            <button class=\"cta-button\">Browse Collection</button>\n        </div>\n    </section>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero shows the exact headline, description, and CTA text from the provided HTML.",
+        "CTA button is visually prominent and has hover/focus styles."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Render a “Trending Books” section as a responsive grid of book cards for the four provided titles/authors, each with a cover image area and an “Add to Cart” button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<h2>Trending Books</h2>\n        <div class=\"book-grid\">\n\n            <div class=\"book-card\">\n                <div class=\"book-image\" style=\"background-color: #e0e0e0;\">Cover Art</div>\n                <h3>The Great Gatsby</h3>\n                <p class=\"author\">F. Scott Fitzgerald</p>\n                \n                <button>Add to Cart</button>\n            </div>\n\n            <div class=\"book-card\">\n                <div class=\"book-image\" style=\"background-color: #d4d4d4;\">Cover Art</div>\n                <h3>1984</h3>\n                <p class=\"author\">George Orwell</p>\n               \n                <button>Add to Cart</button>\n            </div>\n\n            <div class=\"book-card\">\n                <div class=\"book-image\" style=\"background-color: #c7c7c7;\">Cover Art</div>\n                <h3>To Kill a Mockingbird</h3>\n                <p class=\"author\">Harper Lee</p>\n                \n                <button>Add to Cart</button>\n            </div>\n\n            <div class=\"book-card\">\n                <div class=\"book-image\" style=\"background-color: #b0b0b0;\">Cover Art</div>\n                <h3>The Alchemist</h3>\n                <p class=\"author\">Paulo Coelho</p>\n                <button>Add to Cart</button>\n            </div>\n\n        </div>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Trending Books section displays the 4 books: The Great Gatsby, 1984, To Kill a Mockingbird, The Alchemist.",
+        "Each card shows: cover image, title, author, and an Add to Cart button.",
+        "Grid is responsive (1 column on small screens, increasing columns on wider screens)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement client-side cart behavior: clicking “Add to Cart” increases the cart count in the header; optionally allow removing items from a simple cart drawer/modal or dedicated cart section accessible from the cart button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<button>Add to Cart</button>",
+          "Cart (9)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking Add to Cart updates the header cart count immediately.",
+        "Cart state persists at least for the current session (page not refreshed).",
+        "Cart button provides a way to view what was added (drawer/modal/section) and adjust quantities or remove items."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add the footer with the provided copyright text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<footer>\n        <p>&copy; 2024 Chapter One Bookstore. All rights reserved.</p>\n    </footer>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer displays: “© 2024 Chapter One Bookstore. All rights reserved.”"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a coherent visual theme (colors, typography, spacing, component styling) inspired by a warm, paper-and-ink bookstore aesthetic, using Tailwind CSS consistently across the page (avoid a blue/purple primary palette).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Theme feels consistent across header, hero, cards, buttons, and footer.",
+        "Primary colors are not blue/purple-based; use a warm bookstore palette (e.g., parchment/cream, ink/dark, accent like burgundy/forest).",
+        "Typography and spacing are consistent and readable."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add the required generated images as static assets under frontend/public/assets/generated and use them in the homepage (hero background and book cover placeholders).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required images exist under frontend/public/assets/generated with the specified filenames.",
+        "Hero section uses the generated hero image as a background or prominent visual.",
+        "Each trending book card displays a corresponding generated cover placeholder image (not plain text 'Cover Art')."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Do not edit files under frontend/src/components/ui or other paths listed as immutable by the platform.",
+    "Do not introduce non-supported frameworks or services (keep to React + TypeScript + Tailwind + React Query; Motoko backend optional)."
+  ],
+  "nonGoals": [
+    "Implementing a full product catalog backend with search, filtering, pagination, or admin CRUD.",
+    "Integrating payments/checkout or shipping.",
+    "Adding third-party authentication providers (only Internet Identity is allowed, and it is not required for this homepage).",
+    "Real-time features (WebSockets) or external databases/APIs."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Warm bookstore hero banner with bookshelves, parchment tones, soft lighting (chapter-one-hero.dim_1600x900.png)",
+      "Minimalist book cover placeholder art with title motif, warm gray palette (cover-gatsby.dim_600x900.png)",
+      "Minimalist book cover placeholder art with title motif, darker dystopian palette (cover-1984.dim_600x900.png)",
+      "Minimalist book cover placeholder art with title motif, classic literary palette (cover-mockingbird.dim_600x900.png)",
+      "Minimalist book cover placeholder art with title motif, desert/golden palette (cover-alchemist.dim_600x900.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for user-facing text."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

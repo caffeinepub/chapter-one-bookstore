@@ -1,0 +1,104 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T10:11:32.892Z",
+  "summary": "Most core UI pieces are implemented (header/nav with dynamic cart count, hero, trending books grid with 4 specified titles/authors and cover images, cart drawer with quantity controls/removal, and a warm Tailwind theme). However, several requirements that demand exact text/structure and required static image assets are not fully evidenced in the diff, and there are multiple unrequested additions (Internet Identity/actor hooks, React Query wiring, backend stub, and extra footer/checkout content).",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Header matches the provided HTML structure including logo text exactly “Chapter One 📚”.",
+      "reason": "The header renders the emoji and the text “Chapter One” in separate elements rather than the exact combined logo text string “Chapter One 📚” as specified.",
+      "evidence": [
+        "frontend/src/components/Header.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Hero shows the exact headline, description, and CTA text from the provided HTML.",
+      "reason": "Hero text is present but there is no evidence it matches the (unseen) provided HTML exactly; the diff shows specific strings that may differ (e.g., “Find Your Next Great Escape”, “From timeless classics to modern thrillers, we have it all.”, “Browse Collection”).",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Footer displays exactly: “© 2024 Chapter One Bookstore. All rights reserved.”",
+      "reason": "Footer uses a dynamic year via `new Date().getFullYear()` instead of the fixed “2024”, and includes additional attribution text/links not part of the required footer text.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "All required generated images exist under frontend/public/assets/generated with the specified filenames.",
+      "reason": "The code references the required image filenames, but the diff summary does not show any files added under `frontend/public/assets/generated`, so existence of the required static assets is not evidenced.",
+      "evidence": [
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/features/books/trendingBooks.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication provider/hook and actor creation logic (including React Query integration for actor state).",
+      "reason": "BuildRequest explicitly says third-party auth is a non-goal and Internet Identity is allowed but not required for this homepage; diff adds II provider and hooks anyway.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "React Query app-wide setup (QueryClientProvider) unrelated to homepage UI requirements.",
+      "reason": "React Query is allowed but not requested for the homepage behavior; diff adds global QueryClient wiring without corresponding requested data-fetching needs.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Backend Motoko canister stub added with no requested backend behavior.",
+      "reason": "Backend is optional and not requested for this homepage; diff adds `backend/main.mo` with an empty actor.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer includes ‘Built with ♥ using caffeine.ai’ attribution and external link with UTM tracking.",
+      "reason": "Not requested; requirement asks only for the provided copyright line.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Cart panel includes a “Proceed to Checkout” button.",
+      "reason": "Payments/checkout is explicitly a non-goal; adding a checkout call-to-action is outside the requested scope.",
+      "evidence": [
+        "frontend/src/components/CartPanel.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.78,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BookCard.tsx",
+    "frontend/src/components/CartPanel.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/TrendingBooks.tsx",
+    "frontend/src/features/books/trendingBooks.ts",
+    "frontend/src/features/cart/cartStore.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

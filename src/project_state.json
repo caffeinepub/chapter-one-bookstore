@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build an online bookstore website (\"Chapter One\" / Siddheswar Books Store) starting with a homepage/landing page featuring navigation (Home, Categories, Bestsellers, Cart), a hero section, and a trending books grid with Add to Cart buttons.",
+  "architectural_notes": [
+    "Static front-end webpage (HTML + external style.css) using Google Fonts (Poppins)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Warm bookstore hero banner with bookshelves, parchment tones, soft lighting (chapter-one-hero.dim_1600x900.png)\n- Minimalist book cover placeholder art with title motif, warm gray palette (cover-gatsby.dim_600x900.png)\n- Minimalist book cover placeholder art with title motif, darker dystopian palette (cover-1984.dim_600x900.png)\n- Minimalist book cover placeholder art with title motif, classic literary palette (cover-mockingbird.dim_600x900.png)\n- Minimalist book cover placeholder art with title motif, desert/golden palette (cover-alchemist.dim_600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-react-typescript-homepage-that-matches-the-provided-html-structure-header-with-logo-text-chapter-one-navigation-links-home-categories-bestsellers-and-a-cart-button-showing-item-count",
+      "title": "Implement a React + TypeScript homepage that matches the provided HTML structure: header with logo text “Chapter One 📚”, navigation links (Home, Categories, Bestsellers), and a cart button showing item count.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-hero-section-with-the-provided-headline-description-and-cta-button-text-styled-for-a-modern-storefront-landing-page",
+      "title": "Create the hero section with the provided headline, description, and CTA button text, styled for a modern storefront landing page.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-a-trending-books-section-as-a-responsive-grid-of-book-cards-for-the-four-provided-titles-authors-each-with-a-cover-image-area-and-an-add-to-cart-button",
+      "title": "Render a “Trending Books” section as a responsive grid of book cards for the four provided titles/authors, each with a cover image area and an “Add to Cart” button.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-client-side-cart-behavior-clicking-add-to-cart-increases-the-cart-count-in-the-header-optionally-allow-removing-items-from-a-simple-cart-drawer-modal-or-dedicated-cart-section-accessible-from-the-cart-button",
+      "title": "Implement client-side cart behavior: clicking “Add to Cart” increases the cart count in the header; optionally allow removing items from a simple cart drawer/modal or dedicated cart section accessible from the cart button.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-footer-with-the-provided-copyright-text",
+      "title": "Add the footer with the provided copyright text.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-colors-typography-spacing-component-styling-inspired-by-a-warm-paper-and-ink-bookstore-aesthetic-using-tailwind-css-consistently-across-the-page-avoid-a-blue-purple-primary-palette",
+      "title": "Apply a coherent visual theme (colors, typography, spacing, component styling) inspired by a warm, paper-and-ink bookstore aesthetic, using Tailwind CSS consistently across the page (avoid a blue/purple primary palette).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-in-the-homepage-hero-background-and-book-cover-placeholders",
+      "title": "Add the required generated images as static assets under frontend/public/assets/generated and use them in the homepage (hero background and book cover placeholders).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create bookstore homepage UI: header/nav with cart, hero section with CTA, trending books grid with Add to Cart buttons, and footer (HTML/CSS).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Chapter One Bookstore",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

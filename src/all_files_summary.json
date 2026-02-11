@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no functionality.",
+  "feature_evidence.json": "Feature evidence report mapping implemented UI features to source files and components.",
+  "frontend-file-summaries.txt": "Text file summarizing the purpose of key frontend components and feature modules.",
+  "frontend/index.css": "Tailwind base styles and OKLCH color variables defining the app’s light and dark theme palettes.",
+  "frontend/index.html": "HTML entry point with root mount node and script loading the React application.",
+  "frontend/src/App.tsx": "Main React app composing header, hero, trending books, footer, and cart panel within a cart provider.",
+  "frontend/src/components/BookCard.tsx": "Displays a book’s cover, title, and author with a button to add it to the cart.",
+  "frontend/src/components/CartPanel.tsx": "Sliding cart panel showing cart items with controls for quantity, removal, and checkout.",
+  "frontend/src/components/Footer.tsx": "Footer showing copyright text and a caffeine.ai attribution link.",
+  "frontend/src/components/Header.tsx": "Sticky header with logo, navigation links, and a cart button showing item count.",
+  "frontend/src/components/Hero.tsx": "Hero section with background image, headline, description, and button to scroll to trending books.",
+  "frontend/src/components/TrendingBooks.tsx": "Renders the Trending Books section as a responsive grid of BookCard components.",
+  "frontend/src/features/books/trendingBooks.ts": "Static list of four trending books with metadata and cover image paths.",
+  "frontend/src/features/cart/cartStore.tsx": "React cart context with sessionStorage persistence supporting add, remove, and quantity updates.",
+  "frontend/src/hooks/useActor.ts": "Provides a hook that creates and caches a backend actor based on the current Internet Identity and refreshes dependent queries when it changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements an Internet Identity auth context with login, logout, identity loading, and status tracking.",
+  "frontend/src/index.css": "Defines Tailwind base layers and custom CSS variables for a warm bookstore-themed light and dark color palette.",
+  "frontend/src/main.tsx": "Bootstraps the React app using QueryClientProvider and InternetIdentityProvider.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, fonts, animations, and plugins aligned with the bookstore theme.",
+  "project_state.json": "Stores project metadata, requirements, features, and image assets for the bookstore web app."
+}

@@ -1,2 +1,3 @@
-# chapter-one-bookstore
-Exported from Caffeine project: Chapter One Bookstore
+## Chapter One Bookstore
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

@@ -1,0 +1,176 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Chapter One bookstore homepage UI (trending books + client-side cart)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create homepage header with logo, nav links, and a cart button that shows a dynamic item count from cart state.",
+      "acceptanceCriteria": [
+        "Header contains the logo text and the four nav items.",
+        "Cart label displays a dynamic count (not hard-coded) based on current cart state.",
+        "All user-facing text is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the root page layout and render the header with logo text “Chapter One 📚” and nav links (Home, Categories, Bestsellers) plus a cart button whose label reflects current cart item count."
+        },
+        {
+          "path": "frontend/src/features/cart/cartStore.ts",
+          "operation": "create",
+          "description": "Implement a small client-side cart store (React context + hook) exposing cart items, total count, and actions used by the header cart count."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement the hero section with the exact headline, description, and CTA text, with modern storefront styling and accessible hover/focus states.",
+      "acceptanceCriteria": [
+        "Hero shows the exact headline, description, and CTA text from the provided HTML.",
+        "CTA button is visually prominent and has hover/focus styles."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add the hero section containing the exact text: “Find Your Next Great Escape”, “From timeless classics to modern thrillers, we have it all.”, and CTA button “Browse Collection”, with Tailwind hover/focus-visible styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Render a responsive “Trending Books” grid with four book cards (cover image, title, author, Add to Cart).",
+      "acceptanceCriteria": [
+        "Trending Books section displays the 4 books: The Great Gatsby, 1984, To Kill a Mockingbird, The Alchemist.",
+        "Each card shows: cover image, title, author, and an Add to Cart button.",
+        "Grid is responsive (1 column on small screens, increasing columns on wider screens)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/books/trendingBooks.ts",
+          "operation": "create",
+          "description": "Define the four trending books (title, author, cover image asset path, and a stable id) as static data used to render the cards."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Render the “Trending Books” section and map over the four provided titles/authors to display responsive Tailwind grid cards with cover image, title, author, and an “Add to Cart” button."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement client-side cart behavior: Add to Cart updates header count immediately, and provide a cart drawer/modal/section to review and adjust cart contents.",
+      "acceptanceCriteria": [
+        "Clicking Add to Cart updates the header cart count immediately.",
+        "Cart state persists at least for the current session (page not refreshed).",
+        "Cart button provides a way to view what was added (drawer/modal/section) and adjust quantities or remove items."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/cart/cartStore.ts",
+          "operation": "modify",
+          "description": "Add cart actions (add item, remove item, increment/decrement quantity) and session persistence using sessionStorage so cart state survives navigation/re-renders within the session."
+        },
+        {
+          "path": "frontend/src/features/cart/CartPanel.tsx",
+          "operation": "create",
+          "description": "Create a simple cart drawer/modal/section component (Tailwind-styled) that lists added items with quantity controls and remove actions, and supports open/close state from the header cart button."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire “Add to Cart” buttons to cartStore actions; wire the header cart button to open the cart panel; ensure cart count updates immediately."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add the footer with the exact provided copyright text.",
+      "acceptanceCriteria": [
+        "Footer displays: “© 2024 Chapter One Bookstore. All rights reserved.”"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add the footer to the page and render the exact text “© 2024 Chapter One Bookstore. All rights reserved.”"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply a warm, paper-and-ink bookstore aesthetic using Tailwind across header, hero, cards, buttons, and footer (avoid blue/purple primary palette).",
+      "acceptanceCriteria": [
+        "Theme feels consistent across header, hero, cards, buttons, and footer.",
+        "Primary colors are not blue/purple-based; use a warm bookstore palette (e.g., parchment/cream, ink/dark, accent like burgundy/forest).",
+        "Typography and spacing are consistent and readable."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global Tailwind base layer and CSS variables (or base styles) to establish a warm parchment/ink/burgundy (or forest) palette and consistent typography/spacing, ensuring the site avoids blue/purple primaries."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply consistent Tailwind classes for layout, typography, spacing, cards, and buttons to match a warm bookstore aesthetic across all sections."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions as needed to support the warm palette and typography choices used by the homepage (without introducing non-supported frameworks)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add required generated images under frontend/public/assets/generated and use them in the hero and trending book cards.",
+      "acceptanceCriteria": [
+        "All required images exist under frontend/public/assets/generated with the specified filenames.",
+        "Hero section uses the generated hero image as a background or prominent visual.",
+        "Each trending book card displays a corresponding generated cover placeholder image (not plain text 'Cover Art')."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/chapter-one-hero.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated hero banner image asset at the exact path frontend/public/assets/generated/chapter-one-hero.dim_1600x900.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/cover-gatsby.dim_600x900.png",
+          "operation": "create",
+          "description": "Add the generated cover placeholder image asset at the exact path frontend/public/assets/generated/cover-gatsby.dim_600x900.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/cover-1984.dim_600x900.png",
+          "operation": "create",
+          "description": "Add the generated cover placeholder image asset at the exact path frontend/public/assets/generated/cover-1984.dim_600x900.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/cover-mockingbird.dim_600x900.png",
+          "operation": "create",
+          "description": "Add the generated cover placeholder image asset at the exact path frontend/public/assets/generated/cover-mockingbird.dim_600x900.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/cover-alchemist.dim_600x900.png",
+          "operation": "create",
+          "description": "Add the generated cover placeholder image asset at the exact path frontend/public/assets/generated/cover-alchemist.dim_600x900.png."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire frontend/public/assets/generated/chapter-one-hero.dim_1600x900.png into the hero as a background or prominent visual; replace any “Cover Art” text with the corresponding cover images from frontend/public/assets/generated/cover-*.dim_600x900.png for each trending book card."
+        },
+        {
+          "path": "frontend/src/features/books/trendingBooks.ts",
+          "operation": "modify",
+          "description": "Reference the exact generated cover filenames (frontend/public/assets/generated/cover-gatsby.dim_600x900.png, frontend/public/assets/generated/cover-1984.dim_600x900.png, frontend/public/assets/generated/cover-mockingbird.dim_600x900.png, frontend/public/assets/generated/cover-alchemist.dim_600x900.png) in the static trending book data so cards can render images consistently."
+        }
+      ]
+    }
+  ]
+}
